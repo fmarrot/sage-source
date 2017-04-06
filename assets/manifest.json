@@ -17,6 +17,6 @@
     }
   },
   "config": {
-    "devUrl": "http://localhost/2016/dlsi/"
+    "devUrl": ""
   }
 }

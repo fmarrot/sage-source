@@ -260,9 +260,9 @@ gulp.task('jshint', function() {
 //         domain: 'oxbow',
 //         destFile:'oxbow.pot',
 //         package: 'oxbow',
-//         bugReport: 'http://www.pixelus.fr',
-//         lastTranslator: 'Fabien MARROT <fmarrot@pixelus.fr>',
-//         team: 'Fabien MARROT <fmarrot@pixelus.fr>',
+//         bugReport: '',
+//         lastTranslator: 'name LASTNAME <email@email.com>',
+//         team: 'name LASTNAME <email@email.com>',
 //     } ))
 //     .pipe(gulp.dest('lang'));
 // });

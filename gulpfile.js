@@ -20,6 +20,8 @@ var sass         = require('gulp-sass');
 var sourcemaps   = require('gulp-sourcemaps');
 var uglify       = require('gulp-uglify');
 var svgstore     = require('gulp-svgstore');
+// var wpPot        = require('gulp-wp-pot');
+// var sort         = require('gulp-sort');
 
 // See https://github.com/austinpray/asset-builder
 var manifest = require('asset-builder')('./assets/manifest.json');
@@ -250,6 +252,21 @@ gulp.task('jshint', function() {
     .pipe(gulpif(enabled.failJSHint, jshint.reporter('fail')));
 });
 
+// ### PO File
+// gulp.task('I18n', function () {
+//   return gulp.src(['{lib,templates}/**/*.php', '*.php'])
+//     .pipe(sort())
+//     .pipe(wpPot( {
+//         domain: 'oxbow',
+//         destFile:'oxbow.pot',
+//         package: 'oxbow',
+//         bugReport: 'http://www.pixelus.fr',
+//         lastTranslator: 'Fabien MARROT <fmarrot@pixelus.fr>',
+//         team: 'Fabien MARROT <fmarrot@pixelus.fr>',
+//     } ))
+//     .pipe(gulp.dest('lang'));
+// });
+
 // ### Clean
 // `gulp clean` - Deletes the build folder entirely.
 gulp.task('clean', require('del').bind(null, [path.dist]));
@@ -284,6 +301,7 @@ gulp.task('build', function(callback) {
   runSequence('styles',
               'scripts',
               ['fonts', 'images', 'svgstore'],
+              // ['fonts', 'images', 'svgstore', 'I18n'],
               callback);
 });
 

@@ -68,13 +68,13 @@ add_filter('sanitize_file_name', __NAMESPACE__ . '\\sanitize_filename_on_upload'
 /**
  * Add new image sizes to post or page editor
  */
-function oxbow_image_sizes( $sizes ) {
-    $sizes = array_merge( $sizes, array(
-      'post-image' => __( 'Image de contenu' )
-    ));
-    return $sizes;
-}
-add_filter( 'image_size_names_choose', __NAMESPACE__ . '\\oxbow_image_sizes' );
+// function image_sizes( $sizes ) {
+//     $sizes = array_merge( $sizes, array(
+//       'post-image' => __( 'Image de contenu' )
+//     ));
+//     return $sizes;
+// }
+// add_filter( 'image_size_names_choose', __NAMESPACE__ . '\\image_sizes' );
 
 /**
  * Remove menu items for other admins (SEO/WPML/ACF/Tools/Users/Options/Plugins)

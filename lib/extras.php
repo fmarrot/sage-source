@@ -65,6 +65,7 @@ function sanitize_filename_on_upload($filename) {
 
 add_filter('sanitize_file_name', __NAMESPACE__ . '\\sanitize_filename_on_upload', 10);
 
+
 /**
  * Add new image sizes to post or page editor
  */

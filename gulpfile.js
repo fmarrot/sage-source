@@ -21,6 +21,7 @@ var sourcemaps   = require('gulp-sourcemaps');
 var uglify       = require('gulp-uglify');
 var svgstore     = require('gulp-svgstore');
 var rename       = require('gulp-rename');
+var inject       = require('gulp-inject');
 // var wpPot        = require('gulp-wp-pot');
 // var sort         = require('gulp-sort');
 
@@ -236,11 +237,19 @@ gulp.task('images', function() {
 // ### SvgStore
 // `gulp svgstore` - Compile all svg files in a single one
 gulp.task('svgstore', function () {
+  var svgs = gulp
+  .src(path.source + 'svg/*.svg')
+  .pipe(rename({prefix: 'svg-'}))
+  .pipe(svgstore({ inlineSvg: true }));
+
+  function fileContents (filePath, file) {
+    return file.contents.toString();
+  }
+
   return gulp
-    .src([path.source + 'svg/**/*.svg'])
-    .pipe(rename({prefix: 'svg-'}))
-    .pipe(svgstore())
-    .pipe(gulp.dest(path.dist + 'images'));
+    .src([path.source + 'svg/content-svg.php'])
+    .pipe(inject(svgs, { transform: fileContents }))
+    .pipe(gulp.dest('templates'));
 });
 
 // ### JSHint

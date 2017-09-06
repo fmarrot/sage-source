@@ -9,9 +9,7 @@ use Roots\Sage\Wrapper;
 <html <?php language_attributes(); ?>>
   <?php get_template_part('templates/head'); ?>
   <body <?php body_class(); ?>>
-    <div style="height: 0; width: 0; position: absolute; visibility: hidden">
-        <?php include(TEMPLATEPATH."/dist/images/svg.svg"); ?>
-    </div>
+    <?php get_template_part('templates/content-svg'); ?>
     <!--[if IE]>
       <div class="alert alert-warning">
         <?php _e('Vous utilisez un navigateur <strong>obsolète</strong>. Veuillez <a href="http://browsehappy.com/">mettre à jour votre navigateur</a> pour améliorer votre expérience.', 'sage'); ?>

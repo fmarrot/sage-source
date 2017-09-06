@@ -17,6 +17,6 @@
     }
   },
   "config": {
-    "devUrl": ""
+    "devUrl": "http://localhost/sage-source"
   }
 }

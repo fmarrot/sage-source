@@ -20,6 +20,7 @@ var sass         = require('gulp-sass');
 var sourcemaps   = require('gulp-sourcemaps');
 var uglify       = require('gulp-uglify');
 var svgstore     = require('gulp-svgstore');
+var rename       = require('gulp-rename');
 // var wpPot        = require('gulp-wp-pot');
 // var sort         = require('gulp-sort');
 
@@ -237,6 +238,7 @@ gulp.task('images', function() {
 gulp.task('svgstore', function () {
   return gulp
     .src([path.source + 'svg/**/*.svg'])
+    .pipe(rename({prefix: 'svg-'}))
     .pipe(svgstore())
     .pipe(gulp.dest(path.dist + 'images'));
 });

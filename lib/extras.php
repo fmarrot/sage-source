@@ -55,7 +55,8 @@ function pr($data){
  * Avoid accents in media upload
  */
 function sanitize_filename_on_upload($filename) {
-  $ext = end(explode('.',$filename));
+  $tmp = explode('.', $file_name);
+  $ext = end($tmp);
   // Replace all weird characters
   $sanitized = preg_replace('/[^a-zA-Z0-9-_.]/','', substr($filename, 0, -(strlen($ext)+1)));
   // Replace dots inside filename

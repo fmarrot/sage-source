@@ -31,6 +31,9 @@ use Roots\Sage\Wrapper;
         <?php endif; ?>
       </div><!-- /.content -->
     </div><!-- /.wrap -->
+    <!-- <main class="main" role="document">
+      <?php //include Wrapper\template_path(); ?>
+    </main> -->
     <?php
       do_action('get_footer');
       get_template_part('templates/footer');

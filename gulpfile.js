@@ -228,7 +228,10 @@ gulp.task('images', function() {
     .pipe(imagemin([
       imagemin.jpegtran({progressive: true}),
       imagemin.gifsicle({interlaced: true}),
-      imagemin.svgo({plugins: [{removeUnknownsAndDefaults: false}, {cleanupIDs: false}]})
+      imagemin.svgo({plugins: [
+        {removeUnknownsAndDefaults: false},
+        {cleanupIDs: false}
+      ]})
     ]))
     .pipe(gulp.dest(path.dist + 'images'))
     .pipe(browserSync.stream());
@@ -268,9 +271,9 @@ gulp.task('jshint', function() {
 //   return gulp.src(['{lib,templates}/**/*.php', '*.php'])
 //     .pipe(sort())
 //     .pipe(wpPot( {
-//         domain: 'oxbow',
-//         destFile:'oxbow.pot',
-//         package: 'oxbow',
+//         domain: 'text-domain',
+//         destFile:'text-domain.pot',
+//         package: 'text-domain',
 //         bugReport: '',
 //         lastTranslator: 'name LASTNAME <email@email.com>',
 //         team: 'name LASTNAME <email@email.com>',

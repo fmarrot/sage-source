@@ -7,7 +7,15 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "bootstrap": "v4.0.0-beta",
+    "bootstrap": "^4.1.0",
     "fastclick": "^1.0.6"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "./scss/bootstrap.scss",
+        "./dist/js/bootstrap.bundle.js"
+      ]
+    }
   }
 }

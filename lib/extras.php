@@ -42,30 +42,15 @@ function pr($data){
   return $return;
 }
 
+
 /**
  * ACF Options()
  */
 // function my_acf_init() {
-// 	acf_update_setting('google_api_key', get_field('gmap_key','option'));
+//     acf_update_setting('google_api_key', get_field('gmap_key','option'));
 // }
 //
 // add_action('acf/init', __NAMESPACE__ . '\\my_acf_init');
-
-/**
- * Avoid accents in media upload
- */
-function sanitize_filename_on_upload($filename) {
-  $tmp = explode('.', $file_name);
-  $ext = end($tmp);
-  // Replace all weird characters
-  $sanitized = preg_replace('/[^a-zA-Z0-9-_.]/','', substr($filename, 0, -(strlen($ext)+1)));
-  // Replace dots inside filename
-  $sanitized = str_replace('.','-', $sanitized);
-  return strtolower($sanitized.'.'.$ext);
-}
-
-add_filter('sanitize_file_name', __NAMESPACE__ . '\\sanitize_filename_on_upload', 10);
-
 
 /**
  * Add new image sizes to post or page editor

@@ -58,6 +58,7 @@
     "wiredep": "^4.0.0"
   },
   "dependencies": {
-    "natives": "^1.1.6"
+    "natives": "^1.1.6",
+    "tar": "^4.4.8"
   }
 }

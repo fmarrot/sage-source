@@ -1,1 +1,30 @@
+* {
+  box-sizing:  border-box;
+}
+html{
+  font-size: 62.5%; /* =10px */
+}
 
+body {
+  font-family: $default-font-family;
+  @include font-size(13,21,10);
+  color: $light-black;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  &.no-scroll{
+    overflow: hidden;
+  }
+}
+a,button, span{
+  &:focus,
+  &:hover,
+  &:active{
+    outline: none;
+    text-decoration: none;
+  }
+}
+ul,ol{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

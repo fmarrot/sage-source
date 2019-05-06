@@ -1,3 +1,96 @@
+// paths
+$font-path: '../fonts';
+$svg-path: '../svg';
+$img-path: '../images';
+
+
+// Fonts
+// Majesti font heavy
+// @font-face {
+//   font-family: 'majesti_bannerheavy';
+//   src: url('#{$font-path}/majesti-banner-heavy-webfont.woff2') format('woff2'),
+//   url('#{$font-path}/majesti-banner-heavy-webfont.woff') format('woff');
+//   font-weight: 900;
+//   font-style: normal;
+// }
+// 
+// // Majesti font medium
+// @font-face {
+//   font-family: 'majesti_bannermedium';
+//   src: url('#{$font-path}/majesti-banner-medium-webfont.woff2') format('woff2'),
+//        url('#{$font-path}/majesti-banner-medium-webfont.woff') format('woff');
+//   font-weight: 500;
+//   font-style: normal;
+// }
+//
+// // Majesti font book
+// @font-face {
+//   font-family: 'majesti_bannerbook';
+//   src: url('#{$font-path}/majesti-banner-book-webfont.woff2') format('woff2'),
+//        url('#{$font-path}/majesti-banner-book-webfont.woff') format('woff');
+//   font-weight: 700;
+//   font-style: normal;
+// }
+
 // Grid settings
 $main-sm-columns:       12;
 $sidebar-sm-columns:    4;
+
+/*-----------------
+  VARS
+  -> paths
+  -> colors
+  -> fonts
+  -> media queries
+-----------------*/
+
+// Spacing and padding
+$spacer: 1rem;
+$spacers: ();
+$spacers: map-merge((
+  0: 0,
+  1: ($spacer * .1),
+  5: ($spacer/2),
+  10: ($spacer),
+  15: ($spacer * 1.5),
+  20: ($spacer * 2),
+  25: ($spacer * 2.5),
+  30: ($spacer * 3),
+  40: ($spacer * 4),
+  50: ($spacer * 5),
+  60: ($spacer * 6),
+  70: ($spacer * 7),
+  80: ($spacer * 8),
+  90: ($spacer * 9),
+  100: ($spacer * 10),
+  110: ($spacer * 11),
+  120: ($spacer * 12),
+  130: ($spacer * 13),
+  140: ($spacer * 14),
+  150: ($spacer * 15),
+  160: ($spacer * 16),
+  170: ($spacer * 17),
+  180: ($spacer * 18),
+  190: ($spacer * 19),
+  200: ($spacer * 20),
+), $spacers);
+
+// fonts
+// $font-family-alt : $majesti;
+$default-font-family : $font-family-base;
+
+// Grid containers
+$container-max-widths: (
+  md: 720px,
+  lg: 975px,
+  xl: 1200px
+);
+
+// transitions
+$delay: .3s;
+
+// colors
+$light-grey    : #eeebe5;
+$input-btn-focus-box-shadow: none;
+
+$mycolors: (light-grey $light-grey);

@@ -5,11 +5,13 @@
 @import "../../bower_components/bootstrap4/scss/bootstrap.scss";
 // endbower
 
+@import "utils/mixins";
+@import "common/typography";
 @import "common/global";
 @import "components/buttons";
 @import "components/comments";
 @import "components/forms";
-@import "components/grid";
+// @import "components/grid";
 @import "components/wp-classes";
 @import "layouts/header";
 @import "layouts/sidebar";

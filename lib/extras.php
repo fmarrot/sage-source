@@ -42,6 +42,36 @@ function pr($data){
   return $return;
 }
 
+//Dashboard customisation
+function remove_dashboard_widgets() {
+  global $wp_meta_boxes;
+  unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
+  unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);
+  unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now']);
+  unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins']);
+  unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_drafts']);
+  unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_comments']);
+  unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
+  unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary']);
+  unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_activity']);
+  unset($wp_meta_boxes['dashboard']['normal']['core']['mb_dashboard_widget']);
+  unset($wp_meta_boxes['dashboard']['normal']['core']['wpseo-dashboard-overview']);
+}
+
+add_action('wp_dashboard_setup', __NAMESPACE__ . '\\remove_dashboard_widgets',20);
+
+/*
+ * Widget
+ */
+function widget_display(){
+ echo '<p class="align:right"><img src="https://pixelus.fr/signature-mail.png" alt=""></p><p>Vous détectez une anomalie ou un problème technique sur le site, pour créer votre demande merci d\'utiliser le <strong>bugtracker de notre agence</strong>, disponible à l\'adresse suivante : <a href="https://bugtracker.pixelus.fr/" target="_blank">bugtracker.pixelus.fr</a>.</p><p>Si vous ne possédez pas de compte envoyez une demande <a href="mailto:fmarrot@pixelus.fr" target="_blank">ici</a></p><p>Une question sur l\'utilisation du back office ?<br><a href="mailto:fmarrot@pixelus.fr" target="_blank">fmarrot@pixelus.fr</a> ou 05 57 80 04 28</p>';
+}
+function bugtracker_widget(){
+  wp_add_dashboard_widget('bugtracker', 'Un problème sur le site ?',  __NAMESPACE__ . '\\widget_display');
+}
+add_action('wp_dashboard_setup',  __NAMESPACE__ . '\\bugtracker_widget');
+
+
 
 /**
  * ACF Options()

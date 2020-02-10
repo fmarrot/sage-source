@@ -13,7 +13,7 @@ $img-path: '../images';
 //   font-weight: 900;
 //   font-style: normal;
 // }
-// 
+//
 // // Majesti font medium
 // @font-face {
 //   font-family: 'majesti_bannermedium';
@@ -90,7 +90,9 @@ $container-max-widths: (
 $delay: .3s;
 
 // colors
+$color-example-1 : red;
+$color-example-2 : green;
 $light-grey    : #eeebe5;
 $input-btn-focus-box-shadow: none;
 
-$mycolors: (light-grey $light-grey);
+$mycolors: (color-example-1 $color-example-1) (color-example-2 $color-example-2);

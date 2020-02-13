@@ -71,7 +71,13 @@ function bugtracker_widget(){
 }
 add_action('wp_dashboard_setup',  __NAMESPACE__ . '\\bugtracker_widget');
 
-
+/**
+ * Remove Gutenberg editor front css library
+ */
+function wpassist_remove_block_library_css(){
+  wp_dequeue_style( 'wp-block-library' );
+}
+add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\wpassist_remove_block_library_css' );
 
 /**
  * ACF Options()

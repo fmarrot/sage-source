@@ -5,24 +5,6 @@ $img-path: '../images';
 
 
 // Fonts
-// Majesti font heavy
-// @font-face {
-//   font-family: 'majesti_bannerheavy';
-//   src: url('#{$font-path}/majesti-banner-heavy-webfont.woff2') format('woff2'),
-//   url('#{$font-path}/majesti-banner-heavy-webfont.woff') format('woff');
-//   font-weight: 900;
-//   font-style: normal;
-// }
-//
-// // Majesti font medium
-// @font-face {
-//   font-family: 'majesti_bannermedium';
-//   src: url('#{$font-path}/majesti-banner-medium-webfont.woff2') format('woff2'),
-//        url('#{$font-path}/majesti-banner-medium-webfont.woff') format('woff');
-//   font-weight: 500;
-//   font-style: normal;
-// }
-//
 // // Majesti font book
 // @font-face {
 //   font-family: 'majesti_bannerbook';
@@ -77,6 +59,7 @@ $spacers: map-merge((
 
 // fonts
 // $font-family-alt : $majesti;
+$font-family-base : 'arial';
 $default-font-family : $font-family-base;
 
 // Grid containers

@@ -1,8 +1,6 @@
 <?php
-
 use Roots\Sage\Setup;
 use Roots\Sage\Wrapper;
-
 ?>
 
 <!doctype html>
@@ -17,12 +15,12 @@ use Roots\Sage\Wrapper;
     <![endif]-->
     <?php
       do_action('get_header');
-      get_template_part('templates/header');
+      include( locate_template( 'templates/header.php', false, false ) );
 
       include Wrapper\template_path();
 
       do_action('get_footer');
-      get_template_part('templates/footer');
+      include( locate_template( 'templates/footer.php', false, false ) );
       wp_footer();
     ?>
   </body>

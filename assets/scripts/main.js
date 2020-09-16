@@ -19,6 +19,20 @@
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
+        window.WebFontConfig = {
+          // google: {
+          //   families: [ 'Oswald:300,400,600', 'Work+Sans:300,400,500,600,700' ]
+          // },
+          typekit: {
+            id: 'typekit_ID'
+          }
+        };
+        (function() {  var wf = document.createElement('script');
+          wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+          wf.type = 'text/javascript';  wf.async = 'true';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(wf, s);
+        })();
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
@@ -31,12 +45,6 @@
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS
-      }
-    },
-    // About us page, note the change from about-us to about_us.
-    'about_us': {
-      init: function() {
-        // JavaScript to be fired on the about us page
       }
     }
   };

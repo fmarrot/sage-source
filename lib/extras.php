@@ -56,6 +56,8 @@ function remove_dashboard_widgets() {
   unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_activity']);
   unset($wp_meta_boxes['dashboard']['normal']['core']['mb_dashboard_widget']);
   unset($wp_meta_boxes['dashboard']['normal']['core']['wpseo-dashboard-overview']);
+  unset($wp_meta_boxes['dashboard']['normal']['high']['dashboard_php_nag']);
+  unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_site_health']);
 }
 
 add_action('wp_dashboard_setup', __NAMESPACE__ . '\\remove_dashboard_widgets',20);

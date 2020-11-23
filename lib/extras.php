@@ -81,6 +81,12 @@ function wpassist_remove_block_library_css(){
 }
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\wpassist_remove_block_library_css' );
 
+// Change Yoast SEO priority to 'low' to get ACF fields before Yoast metabox.
+function move_yoast_below_acf() {
+  return 'low';
+}
+add_filter( 'wpseo_metabox_prio', __NAMESPACE__ . '\\move_yoast_below_acf');
+
 /**
  * ACF Options()
  */
